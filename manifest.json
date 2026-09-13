@@ -1,0 +1,9 @@
+{
+  "id": "desktop-only-enforcer",
+  "name": "Desktop-Only Enforcer",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Ensures selected plugins always retain the isDesktopOnly flag across updates, preventing unwanted execution on mobile devices.",
+  "author": "Jeff",
+  "isDesktopOnly": true
+}

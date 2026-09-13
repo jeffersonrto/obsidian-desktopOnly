@@ -1,0 +1,26 @@
+{
+  "name": "obsidian-desktop-only-enforcer",
+  "version": "1.0.0",
+  "description": "Ensures designated plugins remain desktop-only across updates by automatically enforcing the isDesktopOnly manifest flag.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production",
+    "test": "node --test tests/enforcer.test.mjs"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "desktop-only"
+  ],
+  "author": "Jeff",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.24.0",
+    "obsidian": "latest",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.0"
+  }
+}
