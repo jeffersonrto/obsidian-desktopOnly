@@ -34,7 +34,7 @@ When this flag is set to `true`, Obsidian Mobile ignores the plugin and never at
 
 - **Intuitive Management UI**:
   - Searchable list of all installed community plugins.
-  - Status badges: `Desktop Only (Enforced)`, `Desktop Only (Plugin Default)`, and `Universal (Desktop + Mobile)`.
+  - Status badges: `Desktop Only (Protected)`, `Desktop Only (Unprotected)`, and `Universal (Desktop + Mobile)`.
   - Filter pills: `All`, `Enforced`, `Not Enforced`.
   - Single-click toggle switches to enforce or un-enforce any plugin.
 - **One-Click Manual Enforcement**: "Check & enforce now" button in Settings and via the Obsidian Command Palette (`Ctrl/Cmd + P`).

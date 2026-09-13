@@ -80,11 +80,12 @@
 	border: 1px solid rgba(var(--color-green-rgb, 46, 160, 67), 0.35);
 }
 
-.desktop-only-badge.badge-desktop-native {
-	background-color: rgba(var(--color-blue-rgb, 56, 139, 253), 0.18);
-	color: var(--color-blue, #58a6ff);
-	border: 1px solid rgba(var(--color-blue-rgb, 56, 139, 253), 0.35);
+.desktop-only-badge.badge-desktop-unprotected {
+	background-color: rgba(var(--color-yellow-rgb, 220, 165, 0), 0.16);
+	color: var(--color-yellow, #d29922);
+	border: 1px solid rgba(var(--color-yellow-rgb, 220, 165, 0), 0.35);
 }
+
 
 .desktop-only-badge.badge-multiplatform {
 	background-color: var(--background-secondary);

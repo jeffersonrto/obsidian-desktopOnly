@@ -227,18 +227,27 @@ export class DesktopOnlySettingTab extends PluginSettingTab {
 			if (isEnforced) {
 				if (pluginInfo.isDesktopOnly) {
 					badge.addClass("badge-enforced");
-					badge.setText("Desktop Only (Enforced)");
+					badge.setText("Desktop Only (Protected)");
+					badge.setAttr(
+						"title",
+						"Locked as desktop-only. Even if an update overwrites manifest.json, it will be restored immediately."
+					);
 				} else {
 					badge.addClass("badge-warning");
-					badge.setText("Syncing / Restoring...");
+					badge.setText("Restoring Desktop Only...");
 				}
 			} else {
 				if (pluginInfo.isDesktopOnly) {
-					badge.addClass("badge-desktop-native");
-					badge.setText("Desktop Only (Plugin Default)");
+					badge.addClass("badge-desktop-unprotected");
+					badge.setText("Desktop Only (Unprotected)");
+					badge.setAttr(
+						"title",
+						"Currently has isDesktopOnly: true on disk, but is NOT guarded. If this plugin updates, it may revert to multiplatform."
+					);
 				} else {
 					badge.addClass("badge-multiplatform");
 					badge.setText("Universal (Desktop + Mobile)");
+					badge.setAttr("title", "Allowed to run on both desktop and mobile devices.");
 				}
 			}
 
@@ -256,7 +265,11 @@ export class DesktopOnlySettingTab extends PluginSettingTab {
 			itemSetting.addToggle((toggle) => {
 				toggle
 					.setValue(isEnforced)
-					.setTooltip(isEnforced ? "Stop enforcing desktop-only" : "Enforce desktop-only across updates")
+					.setTooltip(
+						isEnforced
+							? "Stop protecting this plugin (un-enforce)"
+							: "Protect this plugin as desktop-only across updates"
+					)
 					.onChange(async (checked) => {
 						toggle.setDisabled(true);
 						await this.plugin.enforcer.setPluginDesktopOnly(pluginInfo.id, checked);
@@ -265,6 +278,7 @@ export class DesktopOnlySettingTab extends PluginSettingTab {
 						this.renderFilteredPlugins();
 					});
 			});
+
 		}
 	}
 }
