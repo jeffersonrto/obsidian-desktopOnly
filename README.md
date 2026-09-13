@@ -155,16 +155,23 @@ Because this plugin is tailored specifically for your setup, install it directly
 
 1. Open your terminal and navigate to your vault's plugins directory:
    ```bash
-   cd ~/Documents/ObsidianVaults/<YourVault>/.obsidian/plugins/
+   cd /path/to/yourVault/.obsidian/plugins/
    ```
 2. Create the plugin folder:
    ```bash
    mkdir -p desktop-only-enforcer
    ```
-3. Copy the compiled files from this repository:
+3. Copy the compiled files into that folder:
    ```bash
-   cp /home/jeff/Documents/work/obsidian-desktopOnly/{main.js,manifest.json,styles.css} desktop-only-enforcer/
+   cp /path/to/obsidian-desktopOnly/{main.js,manifest.json,styles.css} desktop-only-enforcer/
    ```
+
+   *(Alternatively, if you are currently inside this repository folder)*:
+   ```bash
+   mkdir -p /path/to/yourVault/.obsidian/plugins/desktop-only-enforcer
+   cp main.js manifest.json styles.css /path/to/yourVault/.obsidian/plugins/desktop-only-enforcer/
+   ```
+
 4. In Obsidian:
    - Go to **Settings** ➔ **Community Plugins**.
    - Click the **Reload** button (refresh icon next to "Installed plugins").
